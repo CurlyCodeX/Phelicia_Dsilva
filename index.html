@@ -20,7 +20,7 @@
   const pre=q('.pre-mark'); if(pre) pre.textContent='Phelicia Dsilva';
   const hero=q('#hero-name'); if(hero){hero.dataset.text='Phelicia Dsilva';hero.textContent='';}
   const about=q('.about-body');
-  const rows=[
+  const rows=[                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
     ['Name','Phelicia Dsilva'],
     ['Institution','St Joseph Engineering College, Mangaluru'],
     ['Program','Artificial Intelligence & Machine Learning, Undergraduate'],
@@ -28,7 +28,7 @@
     ['Location','Mangaluru, Karnataka, India'],
     ['Status','Open to Data Analyst / BI opportunities']
   ];
-  const record=q('.record');
+  const record=q('.record');              
   if(record){record.innerHTML=rows.map(x=>`<div class="record-row"><span class="record-key">${x[0]}</span><span class="record-sep">:</span><span class="record-val">${x[1]}</span></div>`).join('');}
   if(about){
     const p=doc.createElement('p'); p.className='about-copy reveal'; p.dataset.delay='2'; p.textContent='I’m a Data Analytics enthusiast with hands-on experience in Python, SQL, Excel, and Power BI. I enjoy transforming raw data into meaningful insights through data cleaning, analysis, visualization, and interactive dashboards. I’m passionate about solving real-world problems with data and continuously building practical analytics projects.';
@@ -44,11 +44,8 @@
   const projects=[
     ['Churn Analysis & Customer Intelligence','End-to-end churn analytics for an OTT subscription platform, integrating subscriber data and 20+ KPIs to quantify churn, MRR leakage and CLTV impact.','https://github.com/CurlyCodeX/Churn-Analysis-Customer-Intelligence','View project'],
     ['Retail Sales Exploratory Data Analysis','Cleaned and analyzed retail sales data with Python and SQL, then developed an interactive Power BI dashboard for revenue, product, customer and regional insights.','https://github.com/CurlyCodeX/retail-sales-analytics-eda','View project'],
-    ['Epilepsy Detection Using EEG Signals','Ongoing deep learning research using the Bonn EEG dataset with a GNN + BiLSTM + BiGRU architecture to learn spatial and temporal EEG patterns.','https://github.com/CurlyCodeX/','View GitHub'],
-    ['Gen Z Career Aspirations Dashboard','Analyzed 5,300+ survey responses, cleaned and standardized the data, and built an executive dashboard with KPIs, charts and gender-based filtering.','https://github.com/CurlyCodeX/','View GitHub'],
-    ['Data Analytics Portfolio','A practical portfolio of analytics work built around Python, Pandas, SQL, Excel and Power BI, focused on turning raw data into business insights.','https://github.com/CurlyCodeX/','View GitHub'],
-    ['Analytics Learning Lab','Ongoing hands-on work across SQL, Excel, Power Query, DAX, data modeling and dashboard development for entry-level analytics roles.','https://github.com/CurlyCodeX/','View GitHub']
-  ];
+    ['Epilepsy Detection Using EEG Signals','Ongoing deep learning research using the Bonn EEG dataset with a GNN + BiLSTM + BiGRU architecture to learn spatial and temporal EEG patterns.','Ongoin'],
+    ];                                                                                                                                                                                                                                                    
   const cards=[...doc.querySelectorAll('.planet-card')];
   cards.forEach((card,i)=>{
     const p=projects[i];
@@ -58,8 +55,6 @@
   const reportRows=[
     ['TX-001','Churn Analysis & Customer Intelligence','SQL + Python analysis of churn cohorts, revenue leakage and customer intelligence.','GITHUB','https://github.com/CurlyCodeX/Churn-Analysis-Customer-Intelligence'],
     ['TX-002','Retail Sales Analytics EDA','Python + SQL exploratory analysis and Power BI dashboard work.','GITHUB','https://github.com/CurlyCodeX/retail-sales-analytics-eda'],
-    ['TX-003','Data Analytics Resume','Current Data Analyst-focused resume and experience profile.','DOCX','./Phelicia_Dsilva_Resume.docx'],
-    ['TX-004','GitHub Portfolio','Source projects and ongoing analytics work.','WEB','https://github.com/CurlyCodeX/']
   ];
   const reportList=q('.dsn-list'); if(reportList){reportList.innerHTML=reportRows.map((x,i)=>`<a class="dsn-row" href="${x[4]}" ${x[3]==='GITHUB'||x[3]==='WEB'?'target="_blank" rel="noopener"':''} style="--sig:${[86,72,92,100][i]}%"><span class="dsn-id">${x[0]}</span><span class="dsn-body"><span class="dsn-name">${x[1]}</span><span class="dsn-desc"><span>${x[2]}</span></span></span><span class="dsn-wave" aria-hidden="true"></span><span class="dsn-meta"><span class="dsn-sig" aria-hidden="true"><i></i></span><span class="dsn-fmt">${x[3]}</span></span><span class="dsn-cta">Open <i>&#8594;</i></span></a>`).join('');}
   const dsnStatus=q('.dsn-status'); if(dsnStatus) dsnStatus.innerHTML='<i class="dsn-led"></i>Signal lock · 04 packets';
@@ -74,17 +69,9 @@
       <span class="cloud-tag" data-cat="languages" data-weight="2">SQL</span>
       <span class="cloud-tag" data-cat="languages" data-weight="2">Excel</span>
       <span class="cloud-tag" data-cat="languages" data-weight="2">Pandas</span>
-      <span class="cloud-tag" data-cat="languages" data-weight="1">DAX</span>
       <span class="cloud-tag" data-cat="ai" data-weight="2">Machine Learning</span>
-      <span class="cloud-tag" data-cat="ai" data-weight="2">Data Analysis</span>
-      <span class="cloud-tag" data-cat="ai" data-weight="1">EEG Signal Analysis</span>
-      <span class="cloud-tag" data-cat="ai" data-weight="1">Model Evaluation</span>
       <span class="cloud-tag" data-cat="robotics" data-weight="2">Power BI</span>
-      <span class="cloud-tag" data-cat="robotics" data-weight="2">Power Query</span>
-      <span class="cloud-tag" data-cat="robotics" data-weight="2">Data Visualization</span>
-      <span class="cloud-tag" data-cat="robotics" data-weight="1">Dashboard Development</span>
       <span class="cloud-tag" data-cat="webcloud" data-weight="2">Data Modeling</span>
-      <span class="cloud-tag" data-cat="webcloud" data-weight="2">Star Schema</span>
       <span class="cloud-tag" data-cat="webcloud" data-weight="1">GitHub</span>
       <span class="cloud-tag" data-cat="webcloud" data-weight="1">Jupyter</span>`;
   }
@@ -92,7 +79,7 @@
   const footer=q('.footer-meta'); if(footer) footer.innerHTML='&copy; 2026 Phelicia Dsilva';
   // The original source expects its constellation art under the original base. Keep those assets on the original host.
   html=doc.documentElement.outerHTML.replaceAll("new URL('main site/img/constellations/', document.baseURI).href", "'https://aahana-surya.github.io/main%20site/img/constellations/'");
-  html=html.replace(/const JOBS\s*=\s*\[[\s\S]*?\];/m,`const JOBS = [\n    { org: 'KultureHire', role: 'Data Analytics Intern', when: 'Ongoing' },\n    { org: 'SmartBridge x AICTE', role: 'Salesforce Developer Intern', when: 'May 2025 – July 2025' },\n    { org: 'St Joseph Engineering College', role: 'B.E. Artificial Intelligence & Machine Learning', when: '2023 – 2027' },\n    { org: 'Data Analytics', role: 'Python · SQL · Excel · Power BI', when: 'Current focus' },\n    { org: 'Projects', role: 'Practical Analytics & AI Portfolio', when: 'Ongoing' }\n  ];`);
+  html=html.replace(/const JOBS\s*=\s*\[[\s\S]*?\];/m,`const JOBS = [\n    { org: 'KultureHire', role: 'Data Analytics Intern', when: 'Ongoing' },\n    { org: 'SmartBridge x AICTE', role: 'Salesforce Developer Intern', when: 'May 2025 – July 2025' },\n  ];`);
   // Add a tiny override only for the inserted About copy; all original design rules remain untouched.
   html=html.replace('</head>',`<style>.about-copy{max-width:640px;margin:0 0 2.2rem;font:300 clamp(1rem,1.35vw,1.18rem)/1.7 'Inter Tight',sans-serif;color:rgba(220,230,255,.72)}.about-copy.reveal{transition-delay:.08s}</style></head>`);
   document.open(); document.write(html); document.close();
